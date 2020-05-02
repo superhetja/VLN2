@@ -1,15 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from game.models import Game
 
-games =[
-    { 'name': 'Pac-man', 'price': 4.99, 'stock': 1},
-    { 'name': 'man-man', 'price': 3.15, 'stock': 0},
-    { 'name': 'man-Pac', 'price': 6.25, 'stock': 3},
-    { 'name': 'Pac', 'price': 55.69, 'stock': 1},
-    { 'name': 'man', 'price': 12.34, 'stock': 1}
-]
 
 # Create your views here.
 def index(request):
-    return render(request, 'game/index.html', context={
-        'games' :games
+    context = {'games': Game.objects.all().order_by('name')}
+    return render(request, 'game/index.html', context)
+
+# /games/{:id}
+def get_game_by_id(request, id):
+    return render(request, 'game/game_details.html', {
+        'game': get_object_or_404(Game, pk=id)
     })
