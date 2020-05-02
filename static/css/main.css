@@ -1,3 +1,8 @@
 .game {
     border-bottom: solid 2px rgba(155, 155, 155, .5);
 }
+
+.game-img {
+    max-width: 150px;
+    max-height: 200px;
+}

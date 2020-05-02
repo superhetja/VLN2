@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ game.name }}</h1>
+    <p>{{ game.description }}</p>
+    <p>{{ game.price }}$</p>
+    <p>{{ game.type.name }}</p>
+    <img class="game-img" src="{{ game.gameimage_set.first.image }}">
+{% endblock %}
