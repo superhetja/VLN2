@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="game"><h1>Game</h1></div>
+    {% for game in games%}
+        {% if game.stock == 0 %}
+            <p>Out of stock!</p>
+        {% else %}
+            <p>In Stock</p>
+        {% endif %}
+        <h4>{{ game.name }}</h4>
+        <p>{{ game.price }}$</p>
+    {% endfor %}
 {% endblock %}
