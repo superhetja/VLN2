@@ -2,6 +2,8 @@ from django.db import models
 # Tools -> Run manage.py Task.. -> makemigrations
 
 
+
+
 class User(models.Model):
     email = models.CharField(max_length=255, unique=True)
     username = models.CharField(max_length=255)
