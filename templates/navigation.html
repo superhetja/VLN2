@@ -24,6 +24,17 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{% url 'user-index' %}">user</a></li>
+              {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                  <li><a href="{% url 'profile' %}">Profile</a></li>
+
+              {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+              {% endif %}
+            {% if user.is_authenticated %}
+                <img src="{{ user.profile.profile_image }}" class="profile-image" />
+            {% endif %}
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
