@@ -1,0 +1,32 @@
+Style:
+Games side
+Detailed game side
+Login page
+Logout page
+SignUp page
+Profile Page
+
+Navbar
+
+Make Breadcrumb
+
+search history
+Footer
+Add to Cart btn
+Shopping Cart
+Address Form
+Payment form
+Order overview
+Success Page
+
+Filter Game by type
+Sort by name/price
+
+
+Auka
+Favorites
+Make Game w/admin already done create_game() need to impliment page
+Delete game w/admin already done delete_game() need to impliment page
+
+
+
