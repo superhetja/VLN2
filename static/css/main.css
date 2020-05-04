@@ -6,3 +6,45 @@
     max-width: 150px;
     max-height: 200px;
 }
+
+.detailed-game-box {
+    box-shadow: 5px 5px 5px 5px #888888;
+    border-radius: 5px;
+    padding: 0 10px 10px 10px;
+    text-align: center;
+
+}
+
+.detailed-flex-container {
+    display: flex;
+}
+
+.detailed-game-img {
+    max-width: 150px;
+    max-height: 200px;
+    width: 20%;
+}
+
+.detailed-game-desc {
+    width: 30%;
+
+}
+
+.detailed-game-price-type {
+    width: 45%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.detailed-game-price {
+    display: inline;
+    background-color: #f1aa1a;
+
+}
+
+.detailed-add-to-cart{
+    display: block;
+
+}

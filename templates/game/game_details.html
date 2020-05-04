@@ -1,8 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>{{ game.name }}</h1>
-    <p>{{ game.description }}</p>
-    <p>{{ game.price }}$</p>
-    <p>{{ game.type.name }}</p>
-    <img class="game-img" src="{{ game.gameimage_set.first.image }}">
+    <a href="/games" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left">GO BACK</span></a>
+    <div class="detailed-game-box">
+            <h1>{{ game.name }}</h1>
+            <div class="detailed-flex-container">
+                <img class="detailed-game-img" alt="{{ game.name }}" src="{{ game.gameimage_set.first.image }}">
+                <p class="detailed-game-desc">{{ game.description }}</p>
+                <div class="detailed-game-price-type">
+                    <p>Console: {{ game.type.name }}</p>
+                    <p class="detailed-game-price">Price: {{ game.price }}$</p>
+                    <button class="detailed-add-to-cart btn btn-default">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                </div>
+
+            </div>
+    </div>
 {% endblock %}

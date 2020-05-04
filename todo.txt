@@ -1,6 +1,6 @@
 Style:
 Games side
-Detailed game side - Fannar og Friðrik
+Detailed game side - Raw look, needs colorscheme, fonts and fontsize
 Login page
 Logout page
 SignUp page
@@ -12,7 +12,7 @@ Make Breadcrumb
 
 search history
 Footer
-Add to Cart btn
+Add to Cart btn - Added without function
 Shopping Cart
 Address Form
 Payment form
