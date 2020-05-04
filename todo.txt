@@ -1,6 +1,6 @@
 Style:
 Games side
-Detailed game side
+Detailed game side - Fannar og Friðrik
 Login page
 Logout page
 SignUp page
