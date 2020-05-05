@@ -9,7 +9,7 @@
                 <div class="detailed-game-price-type">
                     <p>Console: {{ game.type.name }}</p>
                     <p class="detailed-game-price">Price: {{ game.price }}$</p>
-                    <button class="detailed-add-to-cart btn btn-default">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                    <a href="/add_to_cart/{{ game.id }}" class="detailed-add-to-cart btn btn-default">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span></a>
                 </div>
 
             </div>

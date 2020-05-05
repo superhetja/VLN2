@@ -9,12 +9,12 @@ from game.models import Game, GameImage
 def index(request):
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
-        games = [ {
+        games = [{
             'id': x.id,
             'name': x.name,
             'price': x.price,
             'image': x.gameimage_set.first().image
-        }for x in Game.objects.filter(name__icontains=search_filter) ]
+        } for x in Game.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': games})
     context = {'games': Game.objects.all().order_by('name')}
     return render(request, 'game/index.html', context)
@@ -25,6 +25,15 @@ def get_game_by_id(request, id):
     return render(request, 'game/game_details.html', {
         'game': get_object_or_404(Game, pk=id)
     })
+
+
+def add_to_cart(request, id):
+    cart_id_list = request.session.get('cart_id_list', [])
+    cart_id_list.append(id)
+    request.session['cart_id_list'] = cart_id_list
+    print(cart_id_list)
+    return render(request, 'cart/added_to_cart.html')
+
 
 
 @login_required
@@ -38,7 +47,7 @@ def create_game(request):
             return redirect('game-index')
     else:
         form = GameCreateForm()
-    return render(request, 'game/create_game.html',  {
+    return render(request, 'game/create_game.html', {
         'form': form
     })
 
