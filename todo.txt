@@ -1,6 +1,4 @@
 Style:
-Games side
-Detailed game side - Raw look, needs colorscheme, fonts and fontsize
 Login page
 Logout page
 SignUp page
@@ -11,7 +9,7 @@ Navbar
 Make Breadcrumb
 
 search history
-Footer
+xx Footer - Sindri / klárt
 Add to Cart btn - Added without function
 Shopping Cart
 Address Form - Friðrik og Fannar
