@@ -35,7 +35,6 @@ def add_to_cart(request, id):
     return render(request, 'cart/added_to_cart.html')
 
 
-
 @login_required
 def create_game(request):
     if request.method == 'POST':
