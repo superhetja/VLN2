@@ -14,10 +14,10 @@ search history
 Footer
 Add to Cart btn - Added without function
 Shopping Cart
-Address Form
-Payment form
-Order overview
-Success Page
+Address Form - Friðrik og Fannar
+Payment form - Friðrik og Fannar
+Order overview - Friðrik og Fannar
+Success Page - Friðrik og Fannar
 
 Filter Game by type
 Sort by name/price
