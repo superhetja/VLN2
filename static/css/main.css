@@ -1,10 +1,21 @@
+
 .game {
-    border-bottom: solid 2px rgba(155, 155, 155, .5);
+    margin-top: 10px;
+    width: 150px;
+    height: 200px;
+    border-color: black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #888888;
+    padding: 0 10px 10px 10px;
+    text-align: center;
+    margin: 20px;
+    padding-top: 10px;
+
 }
 
 .game-img {
-    max-width: 150px;
-    max-height: 200px;
+    max-width: 100px;
+    max-height: 100px;
 }
 
 .detailed-game-box {
@@ -53,6 +64,3 @@
     width: 50px;
 }
 
-.login-container {
-    width: 50%;
-}
