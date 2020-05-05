@@ -28,10 +28,14 @@ def get_game_by_id(request, id):
 
 
 def add_to_cart(request, id):
-    cart_id_list = request.session.get('cart_id_list', [])
-    cart_id_list.append(id)
-    request.session['cart_id_list'] = cart_id_list
-    print(cart_id_list)
+    cart_id_dict = request.session.get('cart_id_dict', {})
+    if id in cart_id_dict:
+        cart_id_dict[id] += 1
+    else:
+        cart_id_dict[id] = 1
+
+    request.session['cart_id_dict'] = cart_id_dict
+    print(cart_id_dict)
     return render(request, 'cart/added_to_cart.html')
 
 

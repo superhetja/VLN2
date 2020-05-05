@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        {% for game in games%}
+        {% if game.id in cart_id_dict%}
+            {% include 'cart/cart_item.html' with game=game cart_id_dict=cart_id_dict%}
+
+        {% endif %}
+
+    {% endfor %}
+    </div>
+
+{% endblock %}
