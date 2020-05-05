@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'game.apps.GameConfig',
     'user.apps.UserConfig',
+    'checkout.apps.CheckoutConfig'
 
 
 ]
