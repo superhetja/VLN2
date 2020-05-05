@@ -51,8 +51,5 @@
 
 .profile-image {
     width: 50px;
-}
-
-.login-container {
-    width: 50%;
+    padding-top: 1rem;
 }
