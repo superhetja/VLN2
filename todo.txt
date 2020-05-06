@@ -1,6 +1,4 @@
 Style:
-Games side
-Detailed game side - Raw look, needs colorscheme, fonts and fontsize
 Login page
 Logout page
 SignUp page
