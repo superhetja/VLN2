@@ -8,7 +8,7 @@ $(document).ready(function () {
             type: 'GET',
             success: function(resp) {
                 let newHtml = resp.data.map(d => {
-                    return `<div class="well game">
+                    return `<div class="game col-xs-6 col-sm-4">
                                 <a href="/games/${d.id}">
                                     <img class="game-img" src="${d.image}" />
                                     <h4>${d.name}</h4>
@@ -24,5 +24,10 @@ $(document).ready(function () {
                 console.error(error);
             }
         })
+    });
+
+    $('#price').on('click', function (e) {
+        e.preventDefault();
+        console.log('click')
     });
 });

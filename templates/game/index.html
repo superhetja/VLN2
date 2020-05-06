@@ -3,7 +3,32 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Home</li>
+            <div class="right">
+                <form action="/action_page.php">
+                    <label class="filter-label" for="sort">Sort: </label>
+                    <a class="sort-link sort-selected" id="name" href="#">Name</a>
+                    <a class="sort-link" id="price" href="#">Price</a>
+{% comment %}
+                    <input type="radio" id="name" name="sort" value="name">
+                    <label class="filter-label" for="sort">Name </label>
+                    <input type="radio" id="price" name="sort" value="price">
+                    <label class="filter-label" for="sort">Price </label>
+{% endcomment %}
+
+                    <label class="filter-label" for="types">Filter: </label>
+                    <select id="types" name="types">
+                        <option value="all">All</option>
+                        <option value="nes">NES</option>
+                        <option value="commodore">Commodore</option>
+                        <option value="psclassic">Playstation Classic</option>
+                        <option value="sega">SEGA</option>
+                        <option value="atari">Atari</option>
+                        <option value="gameboy">Game Boy</option>
+                    </select>
+                </form>
+            </div>
         </ol>
+
     </nav>
     <div class="input-group">
         <input type="search" class="form-control" id="search-box" placeholder="Enter your search here.." />
