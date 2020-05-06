@@ -21,8 +21,9 @@ from django.urls import path
 urlpatterns = [
     path('', views.index, name="checkout"),
     path('reduce_quantity/<int:id>', views.reduce_quantity, name="reduce_quantity"),
-    path('add_quantity/<int:id>', views.add_quantity, name="add_quantity")
-
+    path('add_quantity/<int:id>', views.add_quantity, name="add_quantity"),
+    path('contact_info', views.contact_page, name="contact_info"),
+    path('payment_details', views.payment_details, name="payment_details")
 
 ]
 

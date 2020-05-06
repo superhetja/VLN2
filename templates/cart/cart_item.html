@@ -1,6 +1,6 @@
 {% load custom_tags %}
 
-<div class="well game">
+<div class="detailed-game-box">
     <a href="/games/{{ game.id }}">
         <img class="game-img" src="{{ game.gameimage_set.first.image }}"/>
         <h4>{{ game.name }}</h4>
@@ -10,7 +10,5 @@
     <p>Quantity: {{ cart_id_dict|get_item:game.id}}</p>
     <a class="btn btn-default glyphicon glyphicon-minus" href="reduce_quantity/{{ game.id }}"></a>
     <a class="btn btn-default glyphicon glyphicon-plus" href="add_quantity/{{ game.id }}"></a>
-
-
 
 </div>
