@@ -16,6 +16,24 @@ def index(request):
             'image': x.gameimage_set.first().image
         } for x in Game.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': games})
+    elif 'type_filter' in request.GET:
+        type_filter = request.GET['type_filter']
+        games = [{
+            'id': x.id,
+            'name': x.name,
+            'price': x.price,
+            'image': x.gameimage_set.first().image
+        } for x in Game.objects.filter(type__exact=type_filter)]
+        return JsonResponse({'data': games})
+    elif 'sort_filter' in request.GET:
+        sort_filter = request.GET['sort_filter']
+        games =[{
+            'id': x.id,
+            'name': x.name,
+            'price': x.price,
+            'image': x.gameimage_set.first().image
+        } for x in Game.objects.all().order_by(sort_filter)]
+        return JsonResponse({'data': games})
     context = {'games': Game.objects.all().order_by('name')}
     return render(request, 'game/index.html', context)
 

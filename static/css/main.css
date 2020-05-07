@@ -51,8 +51,13 @@
 .detailed-game-price {
     display: inline;
     background-color: #f1aa1a;
-
 }
+
+
+.right {
+    float: right;
+}
+
 
 .detailed-add-to-cart{
     display: block;
@@ -62,4 +67,15 @@
 .profile-image {
     width: 50px;
     padding-top: 1rem;
+}
+
+.sort-link:link, .sort-link:visited, .sort-link:hover, .sort-link:active {
+    color: black;
+    text-decoration: none;
+}
+
+.sort-selected {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
 }
