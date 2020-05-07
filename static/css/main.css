@@ -69,3 +69,13 @@
     padding-top: 1rem;
 }
 
+.sort-link:link, .sort-link:visited, .sort-link:hover, .sort-link:active {
+    color: black;
+    text-decoration: none;
+}
+
+.sort-selected {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
