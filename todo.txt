@@ -9,9 +9,10 @@ Navbar
 Make Breadcrumb
 
 search history
-xx Footer - Sindri / klárt
-Add to Cart btn - Added without function
-Shopping Cart
+Footer
+Add to Cart btn - Working
+Shopping Cart - Working
+Cart Overview - Working
 Address Form - Friðrik og Fannar
 Payment form - Friðrik og Fannar
 Order overview - Friðrik og Fannar

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action={% url 'payment_details' %} method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Next</button>
+
+    </form>
+    <a href="{% url 'checkout' %}" class="btn btn-default">Previous</a>
+
+{% endblock %}

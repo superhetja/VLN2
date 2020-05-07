@@ -84,6 +84,8 @@ celerybeat-schedule
 venv/
 ENV/
 
+.idea/misc.xml
+
 # Spyder project settings
 .spyderproject
 

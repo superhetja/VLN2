@@ -1,3 +1,5 @@
+from . import views
+
 """captain_console URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,15 +15,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
+
+from django.urls import path
 
 urlpatterns = [
-    path('', include('game.urls')),
-    path('admin/', admin.site.urls),
-    path('games/', include('game.urls')),
-    path('users/', include('user.urls')),
-    path('checkout/', include('checkout.urls')),
+    path('', views.index, name="checkout"),
+    path('reduce_quantity/<int:id>', views.reduce_quantity, name="reduce_quantity"),
+    path('add_quantity/<int:id>', views.add_quantity, name="add_quantity"),
+    path('contact_info', views.contact_page, name="contact_info"),
+    path('payment_details', views.payment_details, name="payment_details"),
+    path('review_order', views.review_order, name="review_order"),
+    path('payment_confirmed', views.payment_confirmed, name="payment_confirmed")
 
 ]
 

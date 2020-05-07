@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <form>
+        <label for="cardholder_name">Cardholder name:</label><br>
+        <input type="text" name="cardholder_name"><br>
+        <label for="cnumber">Card number:</label><br>
+        <input type="number" name="cnumber" pattern=".{16}">
+        <label for="expiration_date">Expiration date:</label><br>
+        <input type="number" name="expiration_date" minlength="2" maxlength="2" min="1" max="12"><br>
+        <input type="number" name="expiration_date" minlength="2" maxlength="2" min="20" max="26"><br>
+        <label for="cvc">CVC:</label><br>
+        <input type="number" name="cvc" minlength="3" maxlength="3"><br>
+    </form>
+    <a href="{% url 'contact_info' %}" class="btn btn-default">Previous</a>
+    <a class="btn btn-default " href="{% url 'review_order' %}">Next</a>
+
+{% endblock %}
