@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <p>Fullname: {{ contact_info.full_name }}</p>
+        <p>Street name: {{ contact_info.street_name }}</p>
+        <p>House number: {{ contact_info.house_number }}</p>
+        <p>Postal code: {{ contact_info.postal_code }}</p>
+        <p>City: {{ contact_info.city }}</p>
+        <p>Country: {{ contact_info.country }}</p>
+        <a href="{% url 'payment_details' %}" class="btn btn-default">Previous</a>
+        <a class="btn btn-default" href="{% url 'payment_confirmed' %}">Payment confirmed</a>
+    </div>
+{% endblock %}

@@ -11,4 +11,7 @@
         <label for="cvc">CVC:</label><br>
         <input type="number" name="cvc" minlength="3" maxlength="3"><br>
     </form>
+    <a href="{% url 'contact_info' %}" class="btn btn-default">Previous</a>
+    <a class="btn btn-default " href="{% url 'review_order' %}">Next</a>
+
 {% endblock %}

@@ -19,10 +19,11 @@ def payment_details(request):
         form = ContactForm(data=request.POST)
         if form.is_valid():
             request.session['contact_info'] = form.cleaned_data
-            print(request.session['contact_info'])
             return render(request, 'checkout/payment_details.html')
         else:
             return redirect('contact_info')
+    else:
+        return render(request, 'checkout/payment_details.html')
 
 
 def index(request):
@@ -54,3 +55,14 @@ def add_quantity(request, id):
     request.session['cart_id_dict'] = cart_id_dict
 
     return redirect('checkout')
+
+
+def review_order(request):
+    contact_info = request.session['contact_info']
+
+    context = {'contact_info': contact_info}
+    return render(request, 'checkout/review_order.html', context)
+
+
+def payment_confirmed(request):
+    return render(request, 'checkout/payment_confirmed.html')

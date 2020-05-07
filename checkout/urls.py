@@ -23,7 +23,9 @@ urlpatterns = [
     path('reduce_quantity/<int:id>', views.reduce_quantity, name="reduce_quantity"),
     path('add_quantity/<int:id>', views.add_quantity, name="add_quantity"),
     path('contact_info', views.contact_page, name="contact_info"),
-    path('payment_details', views.payment_details, name="payment_details")
+    path('payment_details', views.payment_details, name="payment_details"),
+    path('review_order', views.review_order, name="review_order"),
+    path('payment_confirmed', views.payment_confirmed, name="payment_confirmed")
 
 ]
 
