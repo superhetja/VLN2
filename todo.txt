@@ -6,10 +6,10 @@ Profile Page
 
 Navbar
 
-Make Breadcrumb
+Make Breadcrumb - komid
 
 search history
-Footer
+Footer - komid
 Add to Cart btn - Working
 Shopping Cart - Working
 Cart Overview - Working
@@ -18,8 +18,8 @@ Payment form - Friðrik og Fannar
 Order overview - Friðrik og Fannar
 Success Page - Friðrik og Fannar
 
-Filter Game by type
-Sort by name/price
+Filter Game by type - komid
+Sort by name/price - komid
 
 
 Auka
