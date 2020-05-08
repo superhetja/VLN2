@@ -9,7 +9,9 @@
     <div class="detailed-game-box">
         <h1>{{ game.name }}</h1>
         <div class="detailed-flex-container">
-            <img class="detailed-game-img" alt="{{ game.name }}" src="{{ game.gameimage_set.first.image }}">
+            {% for game_image in game.gameimage_set.all %}
+                <img src="{{ game_image.image }}" class="game-img"/>
+            {% endfor %}
             <p class="detailed-game-desc">{{ game.description }}</p>
             <div class="detailed-game-price-type">
                 <p>Console: {{ game.type.name }}</p>
