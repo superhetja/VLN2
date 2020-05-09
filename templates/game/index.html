@@ -8,12 +8,6 @@
                     <label class="filter-label" for="sort">Sort: </label>
                     <a class="sort-link sort-selected" id="name" href="#">Name</a>
                     <a class="sort-link" id="price" href="#">Price</a>
-{% comment %}
-                    <input type="radio" id="name" name="sort" value="name">
-                    <label class="filter-label" for="sort">Name </label>
-                    <input type="radio" id="price" name="sort" value="price">
-                    <label class="filter-label" for="sort">Price </label>
-{% endcomment %}
 
                     <label class="filter-label" for="types">Filter: </label>
                     <select id="types" name="types">
@@ -28,16 +22,19 @@
                 </form>
             </div>
         </ol>
-
     </nav>
+
     <div class="input-group">
         <input type="search" class="form-control" id="search-box" placeholder="Enter your search here.." />
-        <div class="input-group-btn">
+        <div class="input-group-append">
             <button type="button" id="search-btn" class="btn btn-default">Search</button>
+            <button class="btn btn-outline-secondary dropdown-toggle" id="history-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+            <div class="dropdown-menu" id="history-dropdown">
+            </div>
         </div>
     </div>
     <div class="games">
-    {% for game in games%}
+    {% for game in games %}
         {% include 'game/single_game.html' with game=game %}
     {% endfor %}
     </div>

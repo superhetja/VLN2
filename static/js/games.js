@@ -1,8 +1,30 @@
 $(document).ready(function () {
 
+    function populateStorage (text) {
+        let storage = localStorage.getItem('searchHistory')
+        if (storage !== null) {
+            storage += '|' + text;
+            localStorage.setItem('searchHistory', storage);
+        } else {
+            localStorage.setItem('searchHistory', text);
+        }
+    }
+
+    $('#history-btn').on('click', function (e) {
+        e.preventDefault();
+        let history = localStorage.getItem('searchHistory').split('|');
+        console.log(history)
+        let newHtml = history.map( x => {
+            return `<a class="dropdown-item" href="#">${x}</a>`
+        });
+        $('#history-dropdown').html(newHtml.join(''));
+    })
+
+
     $('#search-btn').on('click', function(e) {
         e.preventDefault();
         let searchText = $('#search-box').val();
+        populateStorage(searchText);
         $.ajax({
             url: '/games?search_filter=' + searchText,
             type: 'GET',
