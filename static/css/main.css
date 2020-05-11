@@ -127,4 +127,5 @@ a:link, a:visited, a:hover, a:active {
 
 .filter-group {
     display: inline-block;
+    margin-left: 15px;
 }
