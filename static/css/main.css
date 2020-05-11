@@ -5,29 +5,28 @@
     border-color: black;
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px #888888;
-    padding: 0 10px 10px 10px;
     text-align: center;
-    margin: 20px;
-    padding-top: 10px;
-
+    padding: 10px;
 }
+
 
 .game-img {
     max-width: 100px;
     max-height: 100px;
 }
 
+
 .detailed-game-box {
     box-shadow: 5px 5px 5px 5px #888888;
     border-radius: 5px;
     padding: 0 10px 10px 10px;
     text-align: center;
-
 }
 
 .detailed-flex-container {
     display: flex;
 }
+
 
 .detailed-game-img {
     max-width: 150px;
@@ -35,10 +34,11 @@
     width: 20%;
 }
 
+
 .detailed-game-desc {
     width: 30%;
-
 }
+
 
 .detailed-game-price-type {
     width: 45%;
@@ -46,11 +46,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
+
+
 .detailed-game-price {
     display: inline;
-    background-color: #f1aa1a;
 }
 
 
@@ -64,21 +64,31 @@
 
 }
 
+
 .profile-image {
     width: 50px;
     padding-top: 1rem;
 }
+
+
+a:link, a:visited, a:hover, a:active {
+    color: black;
+    text-decoration: none;
+}
+
 
 .sort-link:link, .sort-link:visited, .sort-link:hover, .sort-link:active {
     color: black;
     text-decoration: none;
 }
 
+
 .sort-selected {
     font-weight: bold;
     color: black;
     text-decoration: none;
 }
+
 
 .detailed-checkout-details {
     box-shadow: 5px 5px 5px 5px #888888;
@@ -89,6 +99,7 @@
     margin: auto;
 }
 
+
 .detailed-contact-info {
     box-shadow: 5px 5px 5px 5px #888888;
     border-radius: 5px;
@@ -98,6 +109,22 @@
     margin: auto;
 }
 
+
 .prev-next-btns {
     margin: 10px;
+}
+
+
+.dropdown-item {
+    display: block;
+}
+
+
+.dropdown-item:hover {
+    background-color: lightgray;
+}
+
+
+.filter-group {
+    display: inline-block;
 }
