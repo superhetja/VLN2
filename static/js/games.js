@@ -1,5 +1,27 @@
 $(document).ready(function () {
 
+    function reloadGames (url, value) {
+        $.ajax({
+            url: url + (value ? value : ''),
+            type: 'GET',
+            success: function(resp) {
+                let newHtml = resp.data.map(d => {
+                    return `<div class="game col-xs-6 col-sm-4">
+                               <a href="/games/${d.id}">
+                               <img class="game-img" src="${d.image}" alt="${d.name}"/>
+                               <h4>${d.name}</h4>
+                               <p>${d.price}$</p>
+                               </a>
+                           </div>`
+                });
+                $('.games').html(newHtml.join(''));
+                },
+            error: function (xhr, status, error) {
+                console.error(error);
+                },
+        });
+    }
+
     function populateStorage (text) {
         let storage = localStorage.getItem('searchHistory')
         if (storage !== null) {
@@ -10,73 +32,42 @@ $(document).ready(function () {
         }
     }
 
-    $('#history-btn').on('click', function (e) {
-        e.preventDefault();
-        let history = localStorage.getItem('searchHistory').split('|');
-        console.log(history)
-        let newHtml = history.map( x => {
-            return `<a class="dropdown-item" href="#">${x}</a>`
-        });
-        $('#history-dropdown').html(newHtml.join(''));
-    })
-
-
-    $('#search-btn').on('click', function(e) {
-        e.preventDefault();
-        let searchText = $('#search-box').val();
-        populateStorage(searchText);
-        $.ajax({
-            url: '/games?search_filter=' + searchText,
-            type: 'GET',
-            success: function(resp) {
-                let newHtml = resp.data.map(d => {
-                    return `<div class="game col-xs-6 col-sm-4">
-                                <a href="/games/${d.id}">
-                                    <img class="game-img" src="${d.image}" />
-                                    <h4>${d.name}</h4>
-                                    <p>${d.price}$</p>
-                                </a>
-                            </div>`
-                });
-                $('.games').html(newHtml.join(''));
-                $('#search-box').val('');
-            },
-            error: function (xhr, status, error) {
-                // TODO: show toastr
-                console.error(error);
-            }
-        })
-    });
-
     function toggleSort(e) {
         e.preventDefault();
         for (let node of $('.sort-link')) {
             if (node.classList.toggle('sort-selected')) {
                 let sortText = node.id;
-                $.ajax({
-                    url: '/games?sort_filter=' + sortText,
-                    type: 'GET',
-                    success: function(resp) {
-                        let newHtml = resp.data.map(d => {
-                            return `<div class="game col-xs-6 col-sm-4">
-                                <a href="/games/${d.id}">
-                                    <img class="game-img" src="${d.image}" />
-                                    <h4>${d.name}</h4>
-                                    <p>${d.price}$</p>
-                                </a>
-                            </div>`
-                        });
-                    $('.games').html(newHtml.join(''));
-                    },
-                    error: function (xhr, status, error) {
-                    // TODO: show toastr
-                    console.error(error);
-                    },
-                });
+                reloadGames('/games?sort_filter=', sortText)
             }
-
         }
-    };
+    }
+
+
+    $('#history-btn').on('click', function (e) {
+        e.preventDefault();
+        let history = localStorage.getItem('searchHistory').split('|');
+        let newHtml = history.map( x => {
+            return `<a class="dropdown-item" id="${x}" href="#">${x}</a>`
+        });
+        $('#history-dropdown').html(newHtml.join(''));
+        $('.dropdown-item').on('click', function (e) {
+            e.preventDefault();
+            let searchText = this.id;
+            reloadGames('/games?search_filter=', searchText);
+        })
+    })
+
+
+
+    $('#search-btn').on('click', function(e) {
+        e.preventDefault();
+        let textField = $('#search-box')
+        let searchText = textField.val();
+        populateStorage(searchText);
+        reloadGames('/games?search_filter=', searchText);
+        textField.val('');
+    });
+
 
     $('#price').on('click', function (e) {
         toggleSort(e);
@@ -89,25 +80,6 @@ $(document).ready(function () {
     $('#types').on('change', function (e) {
         e.preventDefault();
         let val = this.value;
-        $.ajax({
-            url: val==0 ? '/games?sort_filter=name' : '/games?type_filter=' + val,
-            type: 'GET',
-            success: function(resp) {
-                let newHtml = resp.data.map(d => {
-                    return `<div class="game col-xs-6 col-sm-4">
-                                <a href="/games/${d.id}">
-                                    <img class="game-img" src="${d.image}" />
-                                    <h4>${d.name}</h4>
-                                    <p>${d.price}$</p>
-                                </a>
-                            </div>`
-                });
-                $('.games').html(newHtml.join(''));
-            },
-            error: function (xhr, status, error) {
-                // TODO: show toastr
-                console.error(error);
-            }
-        })
+        val==='0' ? reloadGames('/games?sort_filter=name') : reloadGames('/games?type_filter=', val);
     })
 });

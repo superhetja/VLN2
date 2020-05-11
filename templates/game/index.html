@@ -1,38 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
+
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">Home</li>
-            <div class="right">
-                <form action="/action_page.php">
-                    <label class="filter-label" for="sort">Sort: </label>
-                    <a class="sort-link sort-selected" id="name" href="#">Name</a>
-                    <a class="sort-link" id="price" href="#">Price</a>
-
-                    <label class="filter-label" for="types">Filter: </label>
-                    <select id="types" name="types">
-                        <option value=0>All</option>
-                        <option value=1>NES</option>
-                        <option value=2>Commodore</option>
-                        <option value=3>Playstation Classic</option>
-                        <option value=5>Sega</option>
-                        <option value=6>Atari</option>
-                        <option value=4>Game Boy</option>
-                    </select>
-                </form>
-            </div>
+            {% include 'game/filter_btns.html' %}
         </ol>
     </nav>
 
     <div class="input-group">
-        <input type="search" class="form-control" id="search-box" placeholder="Enter your search here.." />
-        <div class="input-group-append">
+        <input class="form-control" id="search-box" placeholder="Enter your search here.." type="search"/>
+        <div class="input-group-btn">
             <button type="button" id="search-btn" class="btn btn-default">Search</button>
-            <button class="btn btn-outline-secondary dropdown-toggle" id="history-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+            <button class="btn btn-default dropdown-toggle" id="history-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search History</button>
             <div class="dropdown-menu" id="history-dropdown">
             </div>
         </div>
     </div>
+
     <div class="games">
     {% for game in games %}
         {% include 'game/single_game.html' with game=game %}

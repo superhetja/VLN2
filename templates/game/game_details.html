@@ -10,7 +10,7 @@
         <h1>{{ game.name }}</h1>
         <div class="detailed-flex-container">
             {% for game_image in game.gameimage_set.all %}
-                <img src="{{ game_image.image }}" class="game-img"/>
+                <img alt="{{ game.name }}" src="{{ game_image.image }}" class="game-img"/>
             {% endfor %}
             <p class="detailed-game-desc">{{ game.description }}</p>
             <div class="detailed-game-price-type">
