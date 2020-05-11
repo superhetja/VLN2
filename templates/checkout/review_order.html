@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
-        <p>Fullname: {{ contact_info.full_name }}</p>
-        <p>Street name: {{ contact_info.street_name }}</p>
-        <p>House number: {{ contact_info.house_number }}</p>
-        <p>Postal code: {{ contact_info.postal_code }}</p>
-        <p>City: {{ contact_info.city }}</p>
-        <p>Country: {{ contact_info.country }}</p>
-        <a href="{% url 'payment_details' %}" class="btn btn-default">Previous</a>
-        <a class="btn btn-default" href="{% url 'payment_confirmed' %}">Payment confirmed</a>
+    <div class="detailed-checkout-details">
+        <p>Fullname:</p>
+        {{ contact_info.full_name }}
+        <p>Street name:</p>
+        {{ contact_info.street_name }}
+        <p>House number:</p>
+        {{ contact_info.house_number }}
+        <p>Postal code:</p>
+        {{ contact_info.postal_code }}
+        <p>City:</p>
+        {{ contact_info.city }}
+        <p>Country:</p>
+        {{ contact_info.country }}<br>
+        <a class="btn btn-default prev-next-btns" href="{% url 'payment_details' %}">Previous</a>
+        <a class="btn btn-default prev-next-btns" href="{% url 'payment_confirmed' %}">Payment confirmed</a>
     </div>
 {% endblock %}
